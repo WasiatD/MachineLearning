@@ -3,17 +3,17 @@
 This repository contains a machine learning project for classifying plant diseases using the Inception V3 pre-trained model and TensorFlow Hub. The project is implemented in Python and uses Google Colab as the execution environment.
 
 ## Dataset
-The project uses the PlantVillage dataset, which is available at the [provided Google Drive link]([https://drive.google.com/drive/folders/1--Y5wtswaXc4c_iDJzI1-NejJ6_7xJSn?usp=drive_link](https://drive.google.com/drive/folders/1--Y5wtswaXc4c_iDJzI1-NejJ6_7xJSn?usp=drive_link)). The dataset contains images of various plant leaves with different disease conditions.
+The project uses the PlantVillage dataset, which is available at the [provided Google Drive link](https://drive.google.com/drive/folders/1--Y5wtswaXc4c_iDJzI1-NejJ6_7xJSn?usp=drive_link). The dataset contains images of various plant leaves with different disease conditions.
 
 ## Requirements
 The following libraries can be installed using pip:
-pip install numpy # linear algebra
-pip install pandas # data processing, CSV file I/O (e.g. pd.read_csv)
-pip install tensorflow
-pip install opencv-python
-pip install matplotlib
-pip install tensorflow-hub
-pip install google-generativeai
+1. pip install numpy # linear algebra
+2. pip install pandas # data processing, CSV file I/O (e.g. pd.read_csv)
+3. pip install tensorflow
+4. pip install opencv-python
+5. pip install matplotlib
+6. pip install tensorflow-hub
+7. pip install google-generativeai
 
 Additionally, the project uses the Inception V3 pre-trained model from TensorFlow Hub, which can be accessed at the [provided URL](https://www.kaggle.com/models/google/inception-v3/tensorFlow2/tf2-preview-feature-vector).
 
