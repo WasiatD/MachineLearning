@@ -3,7 +3,7 @@
 This repository contains a machine learning project for classifying plant diseases using the Inception V3 pre-trained model and TensorFlow Hub. The project is implemented in Python and uses Google Colab as the execution environment.
 
 ## Dataset
-The project uses the PlantVillage dataset, which is available at the [provided Google Drive link](https://drive.google.com/drive/folders/1--Y5wtswaXc4c_iDJzI1-NejJ6_7xJSn?usp=drive_link). The dataset contains images of various plant leaves with different disease conditions.
+The project uses the PlantVillage dataset, which is available at the [provided Google Drive link]([https://drive.google.com/drive/folders/1--Y5wtswaXc4c_iDJzI1-NejJ6_7xJSn?usp=drive_link](https://drive.google.com/drive/folders/1--Y5wtswaXc4c_iDJzI1-NejJ6_7xJSn?usp=drive_link)). The dataset contains images of various plant leaves with different disease conditions.
 
 ## Requirements
 The following libraries can be installed using pip:
