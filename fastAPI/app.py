@@ -1,35 +1,31 @@
 # app.py
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
-from model import PlantDiseaseModel, prompt_disease
+from model import plant_disease_model
 import tempfile
 import shutil
 import os
+import base64   
 
 app = FastAPI()
 
 # Initialize the model with the path to the TFLite model file
-model_path = "plant_model.tflite"  # Replace with your model path
-model = PlantDiseaseModel(model_path=model_path)
+model_path = "model_fix2"  # Replace with your model path
+model = plant_disease_model(model_path=model_path)
+
+class ImageData(BaseModel):
+    base64_encoded: str
 
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the Plant Disease Prediction API"}
 
 @app.post("/predict")
-async def predict_plant_disease(file: UploadFile = File(...)):
+async def predict_plant_disease(image_data: ImageData):
     try:
-        # Save the uploaded file to a temporary location
-        with tempfile.NamedTemporaryFile(delete=False) as temp_file:
-            shutil.copyfileobj(file.file, temp_file)
-            temp_file_path = temp_file.name
+        # Make a prediction using the base64 encoded image data
+        predicted_class = model.predict_tf(base64_encoded)
         
-        # Make a prediction using the saved file
-        predicted_class = model.predict_image(temp_file_path)
-        
-        # Clean up the temporary file
-        os.remove(temp_file_path)
-
         return JSONResponse(content={"predicted_class": predicted_class})
 
     except Exception as e:
@@ -38,13 +34,13 @@ async def predict_plant_disease(file: UploadFile = File(...)):
 @app.get("/disease-info/{disease}")
 def get_disease_info(disease: str):
     try:
-        info = prompt_disease(disease)
+        info = plant_disease_model.prompt_disease(disease)
         return JSONResponse(content={"disease_info": info})
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="localhost", port=8000)
 
-# http://127.0.0.1:8000/docs
+# http://localhost:8000/docs
