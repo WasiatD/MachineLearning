@@ -1,12 +1,8 @@
 # app.py
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from model import plant_disease_model
-import tempfile
-import shutil
-import os
-import base64   
-
+from pydantic import BaseModel
 app = FastAPI()
 
 # Initialize the model with the path to the TFLite model file
@@ -24,6 +20,7 @@ def read_root():
 async def predict_plant_disease(image_data: ImageData):
     try:
         # Make a prediction using the base64 encoded image data
+        base64_encoded = image_data.base64_encoded
         predicted_class = model.predict_tf(base64_encoded)
         
         return JSONResponse(content={"predicted_class": predicted_class})

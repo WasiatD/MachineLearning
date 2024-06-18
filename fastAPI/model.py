@@ -57,8 +57,8 @@ class plant_disease_model:
 
         return predicted_class_name
 
-    def prompt_disease(self, disease):
-        genai.configure(api_key="AIzaSyCBIF6CWfmv1QmpcCgQjdbPvvk-UrnCt5k")
+    def prompt_disease(disease):
+        genai.configure(api_key="AIzaSyAdL316Q_O8FF7apV9VVl97Ue8iB6cHFXw")
         model = genai.GenerativeModel('gemini-pro')
         prompt = f"Jelaskan Penyakit {disease}: Pengertian, Penyebab, dan Cara Penanganan singkat dalam 3 paragraf."
         response = model.generate_content(prompt)
