@@ -35,22 +35,22 @@ class plant_disease_model:
         return predicted_class_name
 
     def prompt_disease(self, disease):
-        # Dapatkan kunci API Google Anda dari userdata
+        # Get api key from gemini
         GOOGLE_API_KEY = userdata.get('GOOGLE_API_KEY')
 
-        # Konfigurasi kunci API
+        # configure the api key
         genai.configure(api_key=GOOGLE_API_KEY)
 
-        # Buat instance model GenerativeModel untuk Gemini
+        # create model for the genAI
         model = genai.GenerativeModel('gemini-pro')
 
-        # Prompt berdasarkan penyakit
+        # make the prompt
         prompt = f"Jelaskan Penyakit {disease}: Pengertian, Penyebab, dan Cara Penanganan singkat dalam 3 paragraf."
 
-        # Gunakan model untuk menghasilkan konten berdasarkan prompt
+        # use the GenAI model to prompt
         response = model.generate_content(prompt)
 
-        # Cetak hasil konten yang dihasilkan
+        # return the response
         return response.text
 
     def main_tf(self, image_path):
@@ -62,7 +62,7 @@ class plant_disease_model:
 
 # Usage example:
 if __name__ == "__main__":
-    model_path = "/content/model_fix"
-    image_path = "/TomatoYellowCurlVirus1.JPG"
+    model_path = "/content/model_fix" # change the path using your model from ipynb
+    image_path = "/TomatoYellowCurlVirus1.JPG" # change the path of your test image
     plant_disease_model_instance = plant_disease_model(model_path)
     plant_disease_model_instance.main_tf(image_path)
