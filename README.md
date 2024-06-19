@@ -38,3 +38,4 @@ To use this project, you can follow these steps:
 
 ## Acknowledgements
 This project was developed using the resources provided by TensorFlow Hub and the PlantVillage dataset.
+
