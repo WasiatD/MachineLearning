@@ -58,7 +58,7 @@ class plant_disease_model:
         return predicted_class_name
 
     def prompt_disease(disease):
-        genai.configure(api_key="AIzaSyAdL316Q_O8FF7apV9VVl97Ue8iB6cHFXw")
+        genai.configure(api_key="GOOGLE_API_KEY")
         model = genai.GenerativeModel('gemini-pro')
         prompt = f"Jelaskan Penyakit {disease}: Pengertian, Penyebab, dan Cara Penanganan singkat dalam 3 paragraf."
         response = model.generate_content(prompt)
@@ -70,11 +70,4 @@ class plant_disease_model:
 
         # Print the predicted class name
         print(self.prompt_disease(predicted_class_name))
-
-# # Usage example:
-# if __name__ == "__main__":
-#     model_path = "/content/model_fix"
-#     image_path = "/TomatoYellowCurlVirus1.JPG"
-#     plant_disease_model_instance = plant_disease_model(model_path)
-#     plant_disease_model_instance.main_tf(image_path)
 

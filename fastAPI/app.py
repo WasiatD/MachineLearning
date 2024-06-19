@@ -3,6 +3,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from model import plant_disease_model
 from pydantic import BaseModel
+
 app = FastAPI()
 
 # Initialize the model with the path to the TFLite model file
