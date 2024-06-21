@@ -45,7 +45,7 @@ This project was developed using the resources provided by TensorFlow Hub and th
 ![Classification Flow Diagram](https://github.com/WasiatD/MachineLearning/blob/6eed712ec90fbaaa3e9b12a2f8c7187673ffe09d/classification-flow.png)
 
 ### Train Result
-![Train Result](https://github.com/WasiatD/MachineLearning/blob/3065f94b416ac69e22668dd3b0a0c8b94ac8db53/train-result.png)
+![Train Result](https://github.com/WasiatD/MachineLearning/blob/f15137b4944a54ed9f98a1fac3561cce36865755/train-result.png)
 
 ### Train Graph
 ![Train Graph](https://github.com/WasiatD/MachineLearning/blob/982d40a8e4eb2422835d9251b868efcecc1b2372/train-graph.png)
